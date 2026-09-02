@@ -1,0 +1,6 @@
+{
+  "name": "Personal Gemini Journal",
+  "description": "An authenticated AI journaling companion providing multi-turn reflective dialogues, automated conversation summaries, and private Firestore persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global helper: verify user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Verify authenticated user matches target userId
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User root profile
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // User private journal entries subcollection
+      match /entries/{entryId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User private approved memories subcollection
+      match /memories/{memoryId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+  }
+}

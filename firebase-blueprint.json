@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "description": "User profile metadata",
+      "fields": {
+        "uid": { "type": "string", "description": "User UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Display name" },
+        "photoURL": { "type": "string", "description": "Avatar URL" },
+        "createdAt": { "type": "string", "description": "Account registration timestamp" },
+        "lastLoginAt": { "type": "string", "description": "Last login timestamp" }
+      }
+    },
+    "JournalEntry": {
+      "collection": "users/{userId}/entries",
+      "description": "User private journal entries with multi-turn Gemini conversation, reflection notes, and automatic summaries",
+      "fields": {
+        "id": { "type": "string", "description": "Unique entry identifier" },
+        "userId": { "type": "string", "description": "Author UID" },
+        "title": { "type": "string", "description": "Concise AI-generated or custom title" },
+        "summary": { "type": "string", "description": "Concise summary of the reflection session" },
+        "keyInsights": { "type": "array", "description": "List of key takeaways and actionable reflections" },
+        "reflectionThemes": { "type": "array", "description": "Core themes/moods identified in the dialogue" },
+        "messages": { "type": "array", "description": "Full chronological multi-turn dialogue between user and Gemini" },
+        "createdAt": { "type": "string", "description": "Creation timestamp in ISO format" },
+        "updatedAt": { "type": "string", "description": "Last updated timestamp in ISO format" }
+      }
+    },
+    "UserMemory": {
+      "collection": "users/{userId}/memories",
+      "description": "User approved long-term memories and reflections",
+      "fields": {
+        "id": { "type": "string", "description": "Unique memory identifier" },
+        "userId": { "type": "string", "description": "Author UID" },
+        "content": { "type": "string", "description": "User-approved long-term reflection memory content" },
+        "category": { "type": "string", "enum": ["goal", "concern", "preference", "realization", "pattern", "ongoing"], "description": "Category of the long-term memory" },
+        "createdAt": { "type": "string", "description": "Creation timestamp in ISO format" },
+        "sourceEntryId": { "type": "string", "description": "Optional originating journal entry ID" }
+      }
+    }
+  }
+}

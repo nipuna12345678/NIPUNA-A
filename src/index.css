@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #fdfcfb;
+    color: #3c3c3c;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', Times, serif;
+  }
+}
