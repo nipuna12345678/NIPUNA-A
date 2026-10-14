@@ -111,9 +111,3 @@ gcloud run deploy personal-gemini-journal \
 - [ ] Signing out and back in reloads saved entries
 - [ ] Search filters entries by title, summary, insights and tags
 - [ ] Deleting an entry removes it from Firestore
-
-
-Started from Google's AI Studio repository template, then:
-
-- (write what you added or changed, e.g. the reflection prompt, summary format, search, deletion)
-- (write what you learned or fixed)
