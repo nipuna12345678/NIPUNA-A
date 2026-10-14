@@ -112,7 +112,6 @@ gcloud run deploy personal-gemini-journal \
 - [ ] Search filters entries by title, summary, insights and tags
 - [ ] Deleting an entry removes it from Firestore
 
-## What I built
 
 Started from Google's AI Studio repository template, then:
 
